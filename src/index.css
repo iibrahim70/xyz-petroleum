@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.primary-button {
+  @apply inline-block text-center rounded active:scale-105 transition duration-300 ease-in-out font-medium py-2 px-4 bg-red-500 hover:bg-red-500/90 text-white;
+}
+
+.secondary-button {
+  @apply inline-block text-center rounded active:scale-105 transition duration-300 ease-in-out font-medium py-2 px-4 bg-green-500 hover:bg-green-500/90 text-white;
+}
