@@ -69,11 +69,6 @@ const StepTwoFields = ({ register, errors }) => {
           {...register("projectName", { required: "Project Name is required" })}
           className="w-full p-2 border rounded"
         />
-        {errors.projectName && (
-          <span className="text-red-500 text-sm">
-            {errors.projectName.message}
-          </span>
-        )}
       </div>
 
       <div>
@@ -85,11 +80,6 @@ const StepTwoFields = ({ register, errors }) => {
           })}
           className="w-full p-2 border rounded"
         />
-        {errors.projectDescription && (
-          <span className="text-red-500 text-sm">
-            {errors.projectDescription.message}
-          </span>
-        )}
       </div>
 
       <div>
@@ -100,9 +90,6 @@ const StepTwoFields = ({ register, errors }) => {
           {...register("client", { required: "Client is required" })}
           className="w-full p-2 border rounded"
         />
-        {errors.client && (
-          <span className="text-red-500 text-sm">{errors.client.message}</span>
-        )}
       </div>
 
       <div>
@@ -113,11 +100,6 @@ const StepTwoFields = ({ register, errors }) => {
           {...register("contractor", { required: "Contractor is required" })}
           className="w-full p-2 border rounded"
         />
-        {errors.contractor && (
-          <span className="text-red-500 text-sm">
-            {errors.contractor.message}
-          </span>
-        )}
       </div>
 
       {fileUploaded ? (

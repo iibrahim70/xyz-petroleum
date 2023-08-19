@@ -1,5 +1,4 @@
 import React from "react";
-import { useFormContext } from "./componants/FormContext";
 import {
   PDFDownloadLink,
   Document,
@@ -9,7 +8,7 @@ import {
 } from "@react-pdf/renderer";
 
 const Result = () => {
-  const { formData } = useFormContext();
+  const storedFormData = JSON.parse(localStorage.getItem("formData")) || {};
   const {
     projectName,
     projectDescription,
@@ -21,21 +20,23 @@ const Result = () => {
     min_X,
     min_Y,
     min_Z,
-  } = formData;
+  } = storedFormData;
 
   // Create styles
   const styles = StyleSheet.create({
     page: {
-      flexDirection: "col",
       margin: 20,
+      lineHeight: "2px",
+      fontWeight: 400,
+      fontSize: "14px",
     },
   });
 
   // Define a PDF document component
   const MyDocument = () => (
     <Document>
-      <Page size="A4" orientation="landscape" style={styles.page}>
-        <Text className="text-red-200">Project Name: {projectName}</Text>
+      <Page size="A4" style={styles.page}>
+        <Text>Project Name: {projectName}</Text>
         <Text>Project Description: {projectDescription}</Text>
         <Text>Client: {client}</Text>
         <Text>Contractor: {contractor}</Text>
